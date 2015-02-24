@@ -5,9 +5,121 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>APPSPGHAN</title>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'> -->
+
+    <script>
+      function loadCSS( href, before, media ){
+        "use strict";
+        var ss = window.document.createElement( "link" );
+        var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
+        var sheets = window.document.styleSheets;
+        ss.rel = "stylesheet";
+        ss.href = href;
+        ss.media = "only x";
+        ref.parentNode.insertBefore( ss, ref );
+        function toggleMedia(){
+          var defined;
+          for( var i = 0; i < sheets.length; i++ ){
+            if( sheets[ i ].href && sheets[ i ].href.indexOf( href ) > -1 ){
+              defined = true;
+            }
+          }
+          if( defined ){
+            ss.media = media || "all";
+          }
+          else {
+            setTimeout( toggleMedia );
+          }
+        }
+        toggleMedia();
+        return ss;
+      }
+      loadCSS( "//fonts.googleapis.com/css?family=Lato:100,300" );
+    </script>
+    <noscript><link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"></noscript>
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">  
+
+    <!-- <link rel="stylesheet" href="css/styles.css">  -->
+    <style>
+                  body  {
+              font-family: 'Lato', sans-serif;
+              color: #333;
+              font-weight: 300;
+            }
+
+            a {
+              color: #333;
+            }
+
+            hr {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                background-color: #333; /* Modern Browsers */
+            }
+
+            .text-muted {
+              color: #bcbbbb;
+            }
+
+            .text-thin {
+              font-weight: 100;
+            }
+
+            .title-logo {
+              margin-top: 30px;
+            }
+
+            .title-super  {
+              font-size: 60px;
+              margin-top: 50px;
+            }
+
+            .featured img {
+              border-radius: 5px;
+              display: block;
+              opacity: 0.5;
+              margin: 0 auto;
+              width: 100%;
+            }
+
+            .featured img:hover {
+              opacity: 1;
+              transform: scale(1.0);
+              transition-property: all;
+              transition-duration: 0.6s;
+            }
+
+            .img-center {
+              margin:0 auto;
+            }
+
+            .footer {
+              font-size: 20px;
+              color: #000066;
+            }
+
+
+            @media (max-width: 991px) {
+              h1,
+              h2,
+              h3,
+              h4 {
+                text-align: center;
+              }
+              img {
+                margin: 0 auto;
+              }
+
+              .title-logo {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+              }
+            }
+    </style>
   </head>
   <body>
     <div class="container"> 
